@@ -1,0 +1,41 @@
+.space-mono-regular, p {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.space-mono-bold {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.space-mono-regular-italic {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.space-mono-bold-italic {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.old-standard-tt-regular {
+  font-family: "Old Standard TT", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.old-standard-tt-bold {
+  font-family: "Old Standard TT", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.old-standard-tt-regular-italic {
+  font-family: "Old Standard TT", serif;
+  font-weight: 400;
+  font-style: italic;
+}
