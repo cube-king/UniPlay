@@ -91,7 +91,7 @@ li {
   margin-bottom: 5px;
 }
 
-#footer {
+#playerfooter {
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -101,6 +101,15 @@ li {
   position : absolute;
   bottom : 0;
   width:calc(100% - 2vh);
+}
+
+#footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  background-color: #000;
+  padding-left: 2vh;
+  padding-right: 0;
 }
 
 #player {
