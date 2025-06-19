@@ -98,5 +98,53 @@ li {
   background-color: #000;
   padding-left: 2vh;
   padding-right: 0;
+  position : absolute;
+  bottom : 0;
+  width:calc(100% - 2vh);
 }
 
+#player {
+  background-color: #333;
+  height: 100vh;
+}
+
+#controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap:4px;
+}
+
+#controls button {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 2px solid rgb(255, 255, 255);
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-color: #000000;
+}
+
+#controls button:hover {
+  background-color: #1a1a1a;
+}
+
+#controls button:active {
+  background-color: #333;
+}
+
+#play {
+  background-image: url(./player/play_icon.svg);
+  background-position: 10px;
+}
+
+#skip {
+  background-image: url(./player/skip_icon.svg);
+  background-position: 8px;
+}
+
+#rewind {
+  background-image: url(./player/rewind_icon.svg);
+  background-position: 8px;
+}
