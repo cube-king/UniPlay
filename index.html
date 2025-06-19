@@ -11,22 +11,35 @@
         <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="fonts.css">
         <link rel="stylesheet" href="style.css">
-        <link rel="icon" href="./favicon.ico" type="image/x-icon">
+        <link rel="icon" href="./U.ico" type="image/x-icon">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     </head>
     <body>
         <div id="heroshot">
-            <h1 class="space-mono-bold" id="welcome-title">Welcome to UniPlay</h1>
-            <p>Your hub to unify your music experience across platforms.</p>
-            <a href="./"><button class="space-mono-bold" id="get-started">Dive In</button></a>
+            <div id="navbar">
+                <a href="./"><button class="space-mono-bold navbar-button">Landing</button></a>
+                <a href="./"><button class="space-mono-bold navbar-button">Player</button></a>
+                <a href="./"><button class="space-mono-bold navbar-button">FAQ</button></a>
+                <img src="./U.png" id="navbarlogo">
+            </div>
+            <div id="hscontent">
+                <h1 class="space-mono-bold" id="welcome-title">Welcome to UniPlay</h1>
+                <br>
+                <p>Your hub to unify your music experience across platforms.</p>
+                <br>
+                <a href="./"><button class="space-mono-bold" id="get-started">Dive In</button></a>
+            </div>
         </div>
         <div id="features">
-            <h2 class="space-mono-bold">Features</h2>
-            <p>UniPlay offers a range of features, including the following:</p>
-            <ul>
-                <li class="space-mono-regular">Cross-platform integration</li>
-                <li class="space-mono-regular">Playlist integration</li>
-                <li class="space-mono-regular">Open-source codebase</li>
-            </ul>
+            <div id="fcontent">
+                <h2 class="space-mono-bold">Features</h2>
+                <p>UniPlay offers a range of features, including the following:</p>
+                <ul>
+                    <li class="space-mono-regular" id="crossplatform">Cross-platform integration</li>
+                    <li class="space-mono-regular" id="playlist">Playlist integration</li>
+                    <li class="space-mono-regular" id="opensource">Open-source codebase</li>
+                </ul>
+            </div>
         </div>
         <div id="footer">
             <p>This project was made for the 2025 "Summer of Making" Hack Club Event!</p>
