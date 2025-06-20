@@ -13,26 +13,37 @@
         <link rel="icon" href="../U.ico" type="image/x-icon">
         <link rel="stylesheet" href="../style.css">
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://apis.google.com/js/api.js"></script>
+        <script src="https://www.youtube.com/iframe_api"></script>
     </head>
     <body>
-        <div id="player">
+        <div id="playerwindow">
             <div id="navbar">
                 <a href="../index.html"><button class="space-mono-bold navbar-button">Landing</button></a>
                 <a href="../player/player.html"><button class="space-mono-bold navbar-button">Player</button></a>
                 <a href="../faq/faq.html"><button class="space-mono-bold navbar-button">FAQ</button></a>
                 <img src="../U.png" id="navbarlogo">
             </div>
-            <div id="playlists">
-                <div id="controls">
-                    <button id="rewind"></button>
-                    <button id="play"></button>  
-                    <button id="skip"></button>
+            <div id="signin">
+                <span>x</span>
+            </div>
+            <div id="playercontent">
+                <div id="player"></div>
+                <div id="controlfloat">
+                    <div id="controls"> 
+                        <button id="rewind"></button>
+                        <button id="play"></button>   
+                        <button id="skip"></button> 
+                    </div>
+                    <div id="progbar">
+                        <progress></progress>
+                    </div>
                 </div>
             </div>
             <div id="playerfooter">
                 <p>This project was made for the 2025 "Summer of Making" Hack Club Event!</p>
             </div>
         </div>    
-        <script src="../script.js" async defer></script>
+        <script src="./player.js" defer></script>
     </body>
 </html>
