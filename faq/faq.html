@@ -15,16 +15,53 @@
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div id="navbar">
-            <a href="../index.html"><button class="space-mono-bold navbar-button">Landing</button></a>
-            <a href="../player/player.html"><button class="space-mono-bold navbar-button">Player</button></a>
-            <a href="./faq.html"><button class="space-mono-bold navbar-button">FAQ</button></a>
-            <img src="../U.png" id="navbarlogo">
-        </div>
-
-        <div id="footer">
-            <p>This project was made for the 2025 "Summer of Making" Hack Club Event!</p>
-        </div>
+        <div id="qcontain">
+            <div id="navbar">
+                <a href="../index.html"><button class="space-mono-bold navbar-button">Landing</button></a>
+                <a href="../player/player.html"><button class="space-mono-bold navbar-button">Player</button></a>
+                <a href="../faq/faq.html"><button class="space-mono-bold navbar-button">FAQ</button></a>
+                <img src="../U.png" id="navbarlogo">
+            </div>
+            <div class="question">
+                <h1 id="qtitle" class="space-mono-bold">▶ Why won't my YouTube Videos load?</h1>
+                <p id="qanswer">It's possible that your youtube videos are prevented from embedding on websites due to the creator's restrictions. 
+                Many media groups put restrictions on when and where their videos can be embedded, so if your music doesn't work it may be 
+                preferable to view the content purely on YouTube.</p>
+            </div>
+            <div class="question">
+                <h1 id="qtitle" class="space-mono-bold">▶ Why is premium required for the Spotify functionality?</h1>
+                <p id="qanswer">UniPlay uses an API based on Spotify's Device protocol, allowing a website or device to act as a virtual player for 
+                Spotify. This, under Spotify's ruling, is only availible to Spotify Premium subscribers.</p>
+            </div>
+            <div class="question">
+                <h1 id="qtitle" class="space-mono-bold">▶ Why is SoundCloud functionality currently limited?</h1>
+                <p id="qanswer">SoundCloud has restricted its API to previous users only - 
+                getting a new API key is a long and tedious process involving a lot of waiting, or a lot of overpay!</p>
+            </div>
+            <div class="question">
+                <h1 id="qtitle" class="space-mono-bold">▶ Where can I find the source code to this project?</h1>
+                <p id="qanswer">The source code to UniPlay is availible at <a href="https://github.com/cube-king/UniPlay">https://github.com/cube-king/UniPlay</a></p>
+            </div>
+            <div class="question">  
+                <h1 id="qtitle" class="space-mono-bold">▶ What's the inspiration behind this website?</h1>
+                <p id="qanswer">This website was created out of necessity. I found that having various songs and playlists across various streaming services was 
+                tedious, so I thought - what if there was a method to unify every streaming service? Given the rich tools gifted by APIs - as well as a bit of ingenuity
+                - it would be trivial to create such a thing. Due to the opportunity to build and create programs (courtesy of Hack Club), I was able to put significant time 
+                and effort into solving this problem!</p>
+            </div>
+            <div class="question">
+                <h1 id="qtitle" class="space-mono-bold">▶ Do you sell data or collect cookies?</h1>
+                <p id="qanswer">No! As of 6/21/2025 (and until otherwise stated), this program is 100% open source, free, and privacy-compatible! No data is sold, and only 
+                necessary data is collected!</p>
+            </div>  
+            <div class="question">
+                <h1 id="qtitle" class="space-mono-bold">▶ Will other services and music players be added?</h1>
+                <p id="qanswer">Possibly - it depends on the support given for this project as well as the availability of the APIs for these programs respectively.</p> 
+            </div>  
+            <div id="footer">
+                <p>This project was made for the 2025 "Summer of Making" Hack Club Event!</p>
+            </div>
+        </div> 
         <script src="../script.js" async defer></script>
     </body>
-</html>
+</html> 

@@ -5,7 +5,7 @@
 body {
   margin: 0;
   padding: 0%;
-  color: #333;
+  background-color: #333;
 }
 
 button {
@@ -60,6 +60,21 @@ button:hover {
   margin: 0;
   text-align: left;
   color: white;
+}
+
+#qcontain {
+  background-color: #333;
+  padding-right: 0;
+  -webkit-transition: background-image 0.2s ease-in-out;
+  transition: background-image 0.2s ease-in-out;
+}
+
+.question {
+  border: 2px solid white;
+  padding: 0px 10px;
+  margin-left:6px;
+  color:white;
+  display: block;
 }
 
 #features {
