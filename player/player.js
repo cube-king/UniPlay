@@ -87,7 +87,7 @@ $("#testvid2").click(function (e) {
 });
 
 $("#auth").click(function (e) { 
-  authenticate().then(loadClient());
+  authenticate().then(loadClient).catch(err => console.error("Auth failed:", err));
 });
 
 $("#exec").click(function (e) { 
