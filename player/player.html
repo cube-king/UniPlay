@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data: https://apis.google.com https://www.gstatic.com https://accounts.google.com https://www.youtube.com https://www.youtube-nocookie.com; script-src-elem 'self' 'unsafe-inline' 'unsafe-eval' blob: data: https://apis.google.com https://www.gstatic.com https://accounts.google.com https://www.youtube.com https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline'; frame-src https://www.youtube.com https://accounts.google.com; connect-src 'self' https://accounts.google.com; img-src 'self' data: https://www.gstatic.com https://www.youtube.com;">
+        <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' https://code.jquery.com https://apis.google.com https://www.gstatic.com https://accounts.google.com https://www.youtube.com https://www.youtube-nocookie.com;
+        script-src-elem 'self' https://code.jquery.com https://apis.google.com https://www.gstatic.com https://accounts.google.com https://www.youtube.com https://www.youtube-nocookie.com;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src https://fonts.gstatic.com;
+        frame-src https://www.youtube.com https://accounts.google.com;
+        connect-src 'self' https://accounts.google.com;
+        img-src 'self' data: https://www.gstatic.com https://www.youtube.com;
+        ">
         <meta charset="utf-8">
-
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>UniPlay: Unify Your Music</title>
         <meta name="description" content="">
