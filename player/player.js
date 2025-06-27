@@ -53,7 +53,7 @@ function execute() {
     gapi.auth2.init({client_id: "990409317415-474a7ac8a4jrrkr6ebj88crtbnpkbf49.apps.googleusercontent.com"});
   });
  
-
+ 
 $("#play").click(function () { 
   if (!player) {  
       console.error("YouTube player is not ready yet.");
@@ -84,4 +84,12 @@ $("#testvid2").click(function (e) {
   } else {
     player.cueVideoById("DgFSkstbBvU",0);
   }
+});
+
+$("#auth").click(function (e) { 
+  authenticate().then(loadClient());
+});
+
+$("#exec").click(function (e) { 
+  execute();
 });
