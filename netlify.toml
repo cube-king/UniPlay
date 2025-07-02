@@ -1,2 +1,6 @@
 [build]
   functions = "functions"
+[[headers]]
+for = "/*" # Apply to all paths.
+[headers.values]
+Access-Control-Allow-Origin = "*" # Or specify a specific origin.
