@@ -16,7 +16,11 @@ exports.handler = async (event) => {
 
   const res = await fetch("https://oauth2.googleapis.com/token", {
     method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    headers: { 
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "GET, POST, OPTION", 
+    },
     body: params.toString()
   });
 
