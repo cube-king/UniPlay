@@ -51,7 +51,7 @@ async function startPKCEOAuth() {
   const codeVerifier = generateRandomString(128);
   const codeChallenge = await createCodeChallenge(codeVerifier);
 
-  sessionStorage.setItem("code_verifier", codeVerifier);
+  localStorage.setItem("code_verifier", codeVerifier);
 
   const authUrl = `https://accounts.google.com/o/oauth2/v2/auth` +
     `?response_type=code` +
