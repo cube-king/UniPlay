@@ -44,7 +44,7 @@ async function createCodeChallenge(code_verifier) {
 }
 
 async function startPKCEOAuth() {
-  const clientId = "990409317415-u8egekjp46p6ahpn37mpqf7tcqk9tn5c.apps.googleusercontent.com";
+  const clientId = "990409317415-u757quuc00nmqkdc0b6qmqu4hovt3cet.apps.googleusercontent.com";
   const redirectUri = "https://cube-king.github.io/UniPlay/oauth2callback.html";
   const scope = "https://www.googleapis.com/auth/youtube.readonly";
 
@@ -52,8 +52,7 @@ async function startPKCEOAuth() {
   const codeChallenge = await createCodeChallenge(codeVerifier);
   localStorage.setItem("code_verifier", codeVerifier);  
 
-  const authUrl = `https://accounts.google.com/o/oauth2/v2/auth` +
-    `?response_type=code` +
+  const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?response_type=code` +
     `&client_id=${clientId}` +
     `&redirect_uri=${encodeURIComponent(redirectUri)}` +
     `&scope=${encodeURIComponent(scope)}` +
