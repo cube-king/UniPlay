@@ -1,21 +1,49 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>OAuth 2 Callback</title>
-    </head>
-    <body>
-        <script>
-            const urlParams = new URLSearchParams(window.location.search);
-            const code = urlParams.get('code');
-            if (code) {
-                localStorage.setItem('auth_code', code);
-                window.location.href = 'index.html';
-            } else {
-                document.body.innerText = 'No auth code received.';
-            }
-        </script>
-    </body>
+<head>
+  <title>OAuth2 Callback</title>
+</head>
+<body>
+  <script>
+    async function exchangeCodeForToken(code, codeVerifier) {
+      const clientId = "990409317415-474a7ac8a4jrrkr6ebj88crtbnpkbf49.apps.googleusercontent.com";
+      const redirectUri = "https://cube-king.github.io/UniPlay/oauth2callback.html";
+
+      const data = {
+        code,
+        client_id: clientId,
+        code_verifier: codeVerifier,
+        redirect_uri: redirectUri,
+        grant_type: "authorization_code"
+      };
+
+      const response = await fetch("https://oauth2.googleapis.com/token", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: new URLSearchParams(data)
+      });
+
+      const result = await response.json();
+
+      if (result.access_token) {
+        localStorage.setItem("access_token", result.access_token);
+        window.location.href = "index.html";
+      } else {
+        document.body.innerText = "Error: " + JSON.stringify(result);
+      }
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+    const codeVerifier = sessionStorage.getItem("code_verifier");
+
+    if (code && codeVerifier) {
+      exchangeCodeForToken(code, codeVerifier);
+    } else {
+      document.body.innerText = "Missing code or code_verifier.";
+    }
+  </script>
+</body>
 </html>
