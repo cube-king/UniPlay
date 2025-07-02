@@ -11,3 +11,5 @@ As it turns out, there was primarily an issue with signing in that needed solvin
 Turns out that as well, GitHub Pages (which is where I'm hosting my content for now) doesn't support a flexible CSP - so the previous method of IFrame embedding won't be efficient. Instead, we'll use the "OAuth2 Redirect Flow" option in order to compensate for this. I'll test ONE last CSP "fix" before attempting to move on to a redirect option.
 
 Nope, looks like my code is still malfunctioning (as I expected), and I'll now be switching to an OAuth2 Redirect Flow in order to comply with the preset CSP from GitHub Pages.  
+
+After hours of wrestling with PKCE (and a fundamental misunderstanding of google's implementation of it) I've decided to use Netlify to provide a secure access point and authenticate properly!  
