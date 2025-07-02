@@ -15,10 +15,10 @@
                 return;
               }
             
-              const res = await fetch("https://<your-netlify-site>/.netlify/functions/exchangeCode", {
+              const res = await fetch("https://uni-play.netlify.app/.netlify/functions/exchangeCode", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ code })
+                body: JSON.stringify({ code, code_verifier: codeVerifier })
               });
               const data = await res.json();
             
