@@ -38,7 +38,7 @@
 
         if (response.ok && result.access_token) {
             localStorage.setItem("access_token", result.access_token);
-            window.location.href = "index.html";
+            window.location.href = "./player/player.html";
         } else {
             document.body.innerText = "Error: " + JSON.stringify(result);
         }

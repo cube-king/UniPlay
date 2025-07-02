@@ -79,13 +79,6 @@ function initGapiWithToken() {
   });
 }
 
-$(document).ready(function () {
-  const code = localStorage.getItem('auth_code');
-  if (code && !localStorage.getItem('access_token')) {
-    console.log('Auth code:', code);
-  }
-});
-
 function onPlayerReady(event) {
   console.log("Player is ready");
 }
@@ -94,15 +87,6 @@ function onPlayerError(event) {
   console.error('YouTube Player Error:', event.data);
 } 
  
-function startOAuthFlow () {
-  const clientId = '990409317415-u8egekjp46p6ahpn37mpqf7tcqk9tn5c.apps.googleusercontent.com';
-  const redirectUri = 'https://cube-king.github.io/UniPlay/oauth2callback.html';
-  const scope = 'https://www.googleapis.com/auth/youtube.readonly';
-  const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scope)}&access_type=offline&prompt=consent`;
-
-  window.location.href = authUrl;
-} 
-
 async function setAccessToken(token) {
   await gapi.load('client', () => {
     gapi.client.setToken({ access_token: token });
@@ -141,3 +125,10 @@ $("#testvid2").click(function (e) {
   }
 });
 
+$(document).ready(function () {
+  if (localStorage.getItem("access_token")) {
+    initGapiWithToken();
+  } else {
+    console.log("No access token found");
+  }
+});
