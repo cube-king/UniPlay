@@ -15,6 +15,13 @@ function newIframe(id) {
   }); 
 }
 
+$(document).ready(function () {
+  const code = localStorage.getItem('auth_code');
+  if (code && !localStorage.getItem('access_token')) {
+    console.log('Auth code:', code);
+  }
+});
+
 function onPlayerReady(event) {
   console.log("Player is ready");
 }
@@ -22,38 +29,22 @@ function onPlayerReady(event) {
 function onPlayerError(event) {
   console.error('YouTube Player Error:', event.data);
 } 
+ 
+function startOAuthFlow () {
+  const clientId = '990409317415-474a7ac8a4jrrkr6ebj88crtbnpkbf49.apps.googleusercontent.com';
+  const redirectUri = 'https://cube-king.github.io/UniPlay/oauth2callback.html';
+  const scope = 'https://www.googleapis.com/auth/youtube.readonly';
+  const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scope)}&access_type=offline&prompt=consent`;
 
-function authenticate() {
-  return gapi.auth2.getAuthInstance()
-      .signIn({scope: "https://www.googleapis.com/auth/youtube.readonly"})
-      .then(function() { console.log("Sign-in successful"); },
-            function(err) { console.error("Error signing in", err); });
+  window.location.href = authUrl;
 }
-function loadClient() { 
-  gapi.client.setApiKey("AIzaSyAVSegQGcXQmzzbNv-3p5xFfxlps3Powv0");
-  return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
-      .then(function() { console.log("GAPI client loaded for API"); },
-            function(err) { console.error("Error loading GAPI client for API", err); });
-}
-function execute() {
-    return gapi.client.youtube.playlists.list({
-      "part": [
-        "id"
-      ],
-      "maxResults": 25,
-      "mine": true 
-    })
-        .then(function(response) {    
-                // Handle the results here (response.result has the parsed body).
-                console.log("Response", response);
-              }, 
-              function(err) { console.error("Execute error", err); });
-  }   
-  gapi.load("client:auth2", function() {
-    gapi.auth2.init({client_id: "990409317415-474a7ac8a4jrrkr6ebj88crtbnpkbf49.apps.googleusercontent.com"});
+
+async function setAccessToken(token) {
+  await gapi.load('client', () => {
+    gapi.client.setToken({ access_token: token });
   });
- 
- 
+}
+
 $("#play").click(function () { 
   if (!player) {  
       console.error("YouTube player is not ready yet.");
@@ -86,10 +77,6 @@ $("#testvid2").click(function (e) {
   }
 });
 
-$("#auth").click(function (e) { 
-  authenticate().then(loadClient).catch(err => console.error("Auth failed:", err));
-});
-
-$("#exec").click(function (e) { 
-  execute();
+$("#auth").click(function (e) {
+  startOAuthFlow();
 });

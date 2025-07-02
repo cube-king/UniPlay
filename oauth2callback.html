@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>OAuth 2 Callback</title>
+    </head>
+    <body>
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const code = urlParams.get('code');
+            if (code) {
+                localStorage.setItem('auth_code', code);
+                window.location.href = 'index.html';
+            } else {
+                document.body.innerText = 'No auth code received.';
+            }
+        </script>
+    </body>
+</html>
