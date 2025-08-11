@@ -61,10 +61,15 @@ SC.initialize({
   redirect_uri: 'https://cube-king.github.io/UniPlay/player/player.html'
 });
 
-SC.get('/user/183/tracks').then(function(tracks){
-  alert('Latest track: ' + tracks[0].title);
-});
-
 $("#loginSC").click(function () {
-  preventDefault();
+  SC.connect().then(function() {
+    return SC.get('/me'); 
+  }).then(function(me) {
+    console.log('Logged in as', me.username);
+    return SC.get('/user/183/tracks');
+  }).then(function(tracks) {
+    alert('Latest track: ' + tracks[0].title);
+  }).catch(function(err) {
+    console.error(err);
+  });
 });
