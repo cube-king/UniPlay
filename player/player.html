@@ -15,6 +15,7 @@
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script src="https://apis.google.com/js/api.js"></script>
         <script src="https://www.youtube.com/iframe_api"></script>
+        <script src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js"></script>
     </head> 
     <body>
         <div id="playerwindow">
@@ -26,8 +27,7 @@
             </div>
             <button id="testvid1">video 1</button>
             <button id="testvid2">video 2</button>
-            <button onclick="startPKCEOAuth()">Sign in with Google</button>
-            <button id="exec">execute</button>
+            <button id="loginSC">login with SoundCloud</button>
             <div id="playercontent">
                 <div id="player"></div>
                 <div id="controlfloat">

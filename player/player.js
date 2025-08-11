@@ -39,7 +39,7 @@ $("#play").click(function () {
   }
 }); 
 
-$("#testvid1").click(function (e) { 
+$("#testvid1").click(function () { 
   if (!player) {
     newIframe("QY8dhl1EQfI");
   } else {
@@ -55,10 +55,16 @@ $("#testvid2").click(function (e) {
   }
 });
 
-$(document).ready(function () {
-  if (localStorage.getItem("access_token")) {
-    initGapiWithToken();
-  } else {
-    console.log("No access token found");
-  }
+
+SC.initialize({
+  client_id: 'dm1AUyvla86gaOAXRY1PaRMzqaFn5uND',
+  redirect_uri: 'https://cube-king.github.io/UniPlay/player/player.html'
+});
+
+SC.get('/user/183/tracks').then(function(tracks){
+  alert('Latest track: ' + tracks[0].title);
+});
+
+$("#loginSC").click(function () {
+  preventDefault();
 });
