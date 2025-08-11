@@ -57,8 +57,7 @@ $("#testvid2").click(function (e) {
 
 
 SC.initialize({
-  client_id: 'dm1AUyvla86gaOAXRY1PaRMzqaFn5uND',
-  redirect_uri: 'https://cube-king.github.io/UniPlay/player/player.html'
+  client_id: 'dm1AUyvla86gaOAXRY1PaRMzqaFn5uND'
 });
 
 $("#loginSC").click(function () {
